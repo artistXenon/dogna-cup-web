@@ -1,0 +1,368 @@
+doctype html
+html(lang='ko')
+
+    head
+
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='')
+        meta(name='author', content='')
+
+        title Dogna Cup
+
+        link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
+
+        // Font Awesome icons (free version)
+        script(src='https://use.fontawesome.com/releases/v6.1.0/js/all.js', crossorigin='anonymous')
+
+        // Google fonts
+        link(href='https://fonts.googleapis.com/css?family=Varela+Round', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i', rel='stylesheet')
+
+        // Core theme CSS (includes Bootstrap)
+        link(href='css/styles.css', rel='stylesheet')
+
+    body#page-top
+
+        // Navigation
+        nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
+            .container.px-4.px-lg-5
+                a.navbar-brand(href='#page-top') Dogna Cup
+                button.navbar-toggler.navbar-toggler-right(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+                    | Menu
+                    i.fas.fa-bars
+                #navbarResponsive.collapse.navbar-collapse
+                    ul.navbar-nav.ms-auto
+                        li.nav-item
+                            a.nav-link(href='#page-top') Top
+                        li.nav-item
+                            a.nav-link(href='#about') About
+                        li.nav-item
+                            a.nav-link(href='#schedule') Schedule
+                        li.nav-item
+                            a.nav-link(href='#rules') Rule
+                        li.nav-item
+                            a.nav-link(href='#prizes') Prize
+                        li.nav-item
+                            a.nav-link(href='#signup') Register
+                        //li.nav-item
+                        //    a.nav-link(href='#sponsors') Staff
+
+        // Masthead
+        
+        //script(src='assets/spine-player.js')
+        //link(rel='stylesheet' href='assets/spine-player.css')
+        //#player-container(style='width: 100%; height: 100vh;')
+        //script.
+        //    new spine.SpinePlayer("player-container", {
+        //        premultipliedAlpha: false,
+        //        viewport: {
+        //            x: -960,
+        //            y: -540,
+        //            width: 1920,
+        //            height: 1080,
+        //            padLeft: "5%",
+        //            padRight: "5%",
+        //            padTop: "5%",
+        //            padBottom: "5%",
+        //            debugRender: true
+        //        },
+        //        jsonUrl: "assets/Character.json",
+        //        atlasUrl: "assets/Character_full.atlas"
+        //    });
+
+
+
+
+        .video-wrapper
+            video(autoplay muted).mastvid
+                source(src='assets/vid/intro-day.mp4')
+            header.masthead
+                .container.px-4.px-lg-5.d-flex.h-100.align-items-center.justify-content-center
+                    .d-flex.justify-content-center
+                        .text-center
+                            h1.mx-auto.my-0.text-uppercase Dogna CUP
+                            h2.text-white-50.mx-auto.mt-2.mb-5 Super Animal Royale Summer League
+                            a.btn.btn-primary(href='#about') 자세히
+
+        // About
+        section#about.about-section.text-center
+            .container.px-4.px-lg-5
+                .row.gx-4.gx-lg-5.justify-content-center
+                    .col-lg-8
+                        h2.text-white.mb-4 What is Dogna Cup
+                        p.text-white-50
+                            | Dogna Cup 은 
+                            a(href='https://animalroyale.com/') Super Animal Royale
+                            | 에서 살아남은 최강의 동물을 선정하기 위한 온라인 리그입니다.
+                            br
+                            | 다음 플랫폼에서 무료로 다운받아 플레이할 수 있습니다; 
+                            br
+                            a(href='https://store.steampowered.com/app/843380/Super_Animal_Royale/') Steam
+                            | / 
+                            a(href='https://store.playstation.com/en-gb/concept/10000714/') Play Station
+                            | / 
+                            a(href='https://www.xbox.com/en-US/games/super-animal-royale') XBOX
+                            | / 
+                            a(href='https://www.nintendo.com/en-ca/store/products/super-animal-royale-switch/') Nintendo Switch
+                            
+                canvas#dogna.img-fluid(width='1560' height='466')
+        script.
+            (_ => {
+                const is = [];
+                for(let i=0;i<161;i+=3) {
+                    is[i] = new Image;
+                    is[i].src = 'assets/img/dogna/image_005_'+ String(i).padStart(4, '0') + '.png';
+                }
+                const dgcanvas = document.querySelector('#dogna')
+                const dgcontext = dgcanvas.getContext('2d');
+                let c = 0;
+                setInterval(() => {
+                    if (c > 160) c = 0;
+                    dgcontext.clearRect(0, 0, dgcanvas.width, dgcanvas.height);
+                    dgcontext.drawImage(is[c], -180, -130);
+                    c+= 3;
+                }, 90)
+            }
+
+            )();
+
+        // Schedule
+        section#schedule.schedule-section.bg-light
+            .container.px-4.px-lg-5
+                // Featured Project Row
+                .row.gx-0.mb-4.mb-lg-5.align-items-center
+                    .col-xl-8.col-lg-7
+                        img.img-fluid.mb-3.mb-lg-0(src='assets/img/schedule.jpg', alt='...')
+                    .col-xl-4.col-lg-5
+                        .featured-text.text-lg-left
+                            h2 Schedule
+                            h4 
+                            | 참가자 모집 : 
+                            br
+                            | 2022/07/01 KST 00:00 ~ 
+                            br
+                            | 2022/07/24 KST 23:59
+                            br
+                            p 정원 초과에 의해 모집이 조기 마감될 수 있습니다.
+                            br
+                            br
+                            | DOGNA CUP : 
+                            br
+                            | 2022/07/31 KST 21:00            
+
+        // Rules
+        section#rules.rule-section.bg-dark
+            .container.px-4.px-lg-5           
+                .row.gx-4.gx-lg-5
+                    .col-md-10.col-lg-8.mx-auto.text-center
+                        h2.text-white.mb-5 Rules
+                // Project One Row
+                .row.gx-0.mb-5.mb-lg-0.justify-content-center
+                    .col-lg-6
+                        img#rule1.img-fluid
+                        
+                        script.
+                            (_ => {
+                                const is = [];
+                                let previmg = document.querySelector('#rule1');
+                                let nowimg = document.querySelector('#rule1');
+                                for(let i=0;i<190;i+=1) {
+                                    is[i] = new Image;
+                                    is[i].classList.add('img-fluid')
+                                    is[i].id = 'rule1'
+                                    is[i].src = 'assets/img/fight/sar1'+ String(i).padStart(3, '0') + '.jpg';
+                                }
+                                
+                                let c = 0;
+                                setInterval(() => {
+                                    if (c > 189) c = 0;
+                                    previmg = nowimg;
+                                    nowimg = is[c++]
+                                    previmg.replaceWith(nowimg);
+                                }, 100)
+                            }
+
+                            )();
+
+                    .col-lg-6
+                        .bg-black.text-center.h-100.project
+                            .d-flex.h-100
+                                .rule-text.w-100.my-auto.text-center.text-lg-left
+                                    h4.text-white Main Rule
+                                    p.mb-0.text-white-50
+                                        | 3 게임씩 2세트의 솔로 경기가 치뤄집니다. 각 게임에서 순위와 킬 수를 바탕으로 각 플레이어에게 점수가 주어집니다.
+                                    hr.d-none.d-lg-block.mb-0.ms-0
+                // Project Two Row
+                .row.gx-0.justify-content-center
+                    .col-lg-6
+                        img.img-fluid(src='assets/img/points.png', alt='...')
+                    .col-lg-6.order-lg-first
+                        .bg-black.text-center.h-100.project
+                            .d-flex.h-100
+                                .rule-text.w-100.my-auto.text-center.text-lg-right
+                                    h4.text-white Point System
+                                    p.mb-0.text-white-50
+                                        | 전체 순위는 각 플레이어가 획득한 점수를 합산하여 산정됩니다.
+                                    hr.d-none.d-lg-block.mb-0.me-0
+                                    
+        // Prize pool
+        section#prizes.projects-section.bg-light
+            .container.px-4.px-lg-5
+                .row.gx-4.gx-lg-5
+                    .col-md-10.col-lg-8.mx-auto.text-center
+                        h2.text-black.mb-5 Prize Pool           
+                // Project One Row
+                .row.gx-0.mb-5.mb-lg-0.justify-content-center
+                    .col-lg-6
+                        img.img-fluid(src='assets/img/monsters.jpg', alt='...')
+                    .col-lg-6
+                        .bg-black.text-center.h-100.project
+                            .d-flex.h-100
+                                .project-text.w-100.my-auto.text-center.text-lg-left
+                                    h4.text-white 최강의 애니멀 상
+                                    p.mb-0.text-white-50
+                                        | MONSTER Energy x24
+                                    hr.d-none.d-lg-block.mb-0.ms-0
+                // Project Two Row
+                .row.gx-0.justify-content-center
+                    .col-lg-6
+                        img.img-fluid(src='assets/img/cu.jpg', alt='...')
+                    .col-lg-6.order-lg-first
+                        .bg-black.text-center.h-100.project
+                            .d-flex.h-100
+                                .project-text.w-100.my-auto.text-center.text-lg-right
+                                    h4.text-white 2등상
+                                    p.mb-0.text-white-50
+                                        | CU 10,000KRW Gift
+                                    hr.d-none.d-lg-block.mb-0.me-0
+
+                // Project Three Row
+                .row.gx-0.mb-5.mb-lg-0.justify-content-center
+                    .col-lg-6
+                        img.img-fluid(src='assets/img/monster.jpg', alt='...')
+                    .col-lg-6
+                        .bg-black.text-center.h-100.project
+                            .d-flex.h-100
+                                .project-text.w-100.my-auto.text-center.text-lg-left
+                                    h4.text-white 3등상
+                                    p.mb-0.text-white-50
+                                        | MONSTER Energy x1
+                                    hr.d-none.d-lg-block.mb-0.ms-0
+                                    
+            .container.px-4.px-lg-5
+                .row.gx-4.gx-lg-5.justify-content-center
+                    .col-lg-8
+                        p.text-black-50.text-center
+                            | 4등 ~ 64등 사이의 무작위 3명의 플레이어는 장려상으로 위 상품 중 하나씩을 받을 수 있습니다.
+
+
+        // Signup
+        section#signup.signup-section
+            .container.px-4.px-lg-5
+                .row.gx-4.gx-lg-5
+                    .col-md-10.col-lg-8.mx-auto.text-center
+                        i.far.fa-paper-plane.fa-2x.mb-2.text-white
+                        h2.text-white.mb-5 Registration Coming soon
+                        //Register to Dogna Cup
+
+                        // * * * * * * * * * * * * * * *
+                        // * * SB Forms Contact Form * *
+                        // * * * * * * * * * * * * * * *
+
+                        // This form is pre-integrated with SB Forms.
+                        // To make this form functional, sign up at
+                        // https://startbootstrap.com/solution/contact-forms
+                        // to get an API token!
+                        
+                        //form#contactForm.form-signup(data-sb-form-api-token='API_TOKEN')
+
+                            // Email address input
+
+                            .row.input-group-newsletter
+                                .col
+                                    input#emailAddress.form-control(
+                                        type='email',
+                                        placeholder='Enter email address...',
+                                        aria-label='Enter email address...',
+                                        data-sb-validations='required,email'
+                                    )
+                                .col-auto
+                                    button#submitButton.btn.btn-primary.disabled(type='submit') Ready!
+                            .invalid-feedback.mt-2(data-sb-feedback='emailAddress:required')
+                                | An email is required.
+                            .invalid-feedback.mt-2(data-sb-feedback='emailAddress:email')
+                                | Email is not valid.
+
+                            // Submit success message
+                            //
+                            // This is what your users will see when the form
+                            // has successfully submitted
+
+                            #submitSuccessMessage.d-none
+                                .text-center.mb-3.mt-2.text-white
+                                    .fw-bolder Form submission successful!
+                                    | To activate this form, sign up at
+                                    br
+                                    a(href='https://startbootstrap.com/solution/contact-forms') https://startbootstrap.com/solution/contact-forms
+
+                            // Submit error message
+                            //
+                            // This is what your users will see when there is
+                            // an error submitting the form
+
+                            #submitErrorMessage.d-none
+                                .text-center.text-danger.mb-3.mt-2 Error sending message!
+
+        // Contact
+        section#sponsors.contact-section.bg-black
+            .container.px-4.px-lg-5
+                .row.gx-4.gx-lg-5
+                    .col-md-10.col-lg-8.mx-auto.text-center
+                        h2.text-white.mb-5 Brought to you by
+            .container.px-4.px-lg-5
+                .row.gx-4.gx-lg-5
+                    .col-md-4.mb-3.mb-md-0
+                        a.text-decoration-none(href='https://twitter.com/a_Ailre')
+                            .card.py-4.h-100
+                                .card-body.text-center
+                                    i.fas.fa-laptop-code.text-primary.mb-2
+                                    h4.text-uppercase.m-0 Ailre
+                                    hr.my-4.mx-auto
+                                    .small.text-black-50 The Ambitious Developer
+
+                    //.col-md-4.mb-3.mb-md-0
+                    //    .card.py-4.h-100
+                    //        .card-body.text-center
+                    //            i.fas.fa-plus.text-primary.mb-2
+                    //            h4.text-uppercase.m-0 Streamer
+                    //            hr.my-4.mx-auto
+                    //            .small.text-black-50 스트리머를 모집하고있습니다!
+
+                    //.col-md-4.mb-3.mb-md-0
+                    //    .card.py-4.h-100
+                    //        .card-body.text-center
+                    //            i.fas.fa-mobile-alt.text-primary.mb-2
+                    //            h4.text-uppercase.m-0 Phone
+                    //            hr.my-4.mx-auto
+                    //            .small.text-black-50 +1 (555) 902-8832
+
+                .social.d-flex.justify-content-center
+                    //a.mx-2(href='#!')
+                    //    i.fab.fa-discord
+                    //a.mx-2(href='#!')
+                    //    i.fab.fa-facebook-f
+                    //a.mx-2(href='https://twitter.com/a_Ailre')
+                    //    i.fab.fa-twitter
+
+        // Footer
+        footer.footer.bg-black.small.text-center.text-white-50
+            .container.px-4.px-lg-5
+                | Copyright &copy; Dogna Cup 2022
+
+        // Bootstrap core JS
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js')
+
+        // Core theme JS
+        script(src='js/scripts.js')
+

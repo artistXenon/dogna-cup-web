@@ -9,7 +9,7 @@
         "build:scripts": "node scripts/build-scripts.js",
         "build:scss": "node scripts/build-scss.js",
         "clean": "node scripts/clean.js",
-        "start": "npm run build && node scripts/start.js",
+        "start": "npm run build && node scripts/express",
         "start:debug": "npm run build && node scripts/start-debug.js"
     },
     "description": "A grayscale one page HTML theme for Bootstrap.",
@@ -36,7 +36,8 @@
         "url": "https://github.com/StartBootstrap/startbootstrap-grayscale.git"
     },
     "dependencies": {
-        "bootstrap": "5.1.3"
+        "bootstrap": "5.1.3",
+        "express": "^4.18.1"
     },
     "devDependencies": {
         "autoprefixer": "10.4.4",

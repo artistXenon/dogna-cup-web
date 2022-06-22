@@ -310,24 +310,25 @@ html(lang='ko')
                                 const is = [];
                                 let previmg = document.querySelector('#rule1');
                                 let nowimg = document.querySelector('#rule1');
-                                setTimeout(_=> {
-                                    for(let i=0;i<190;i+=1) {
-                                        is[i] = new Image;
-                                        is[i].setAttribute('loading',"lazy")
-                                        is[i].classList.add('img-fluid')
-                                        is[i].id = 'rule1'
-                                        is[i].src = 'assets/img/fight/sar1'+ String(i).padStart(3, '0') + '.jpg';
-                                    }
-                                }, 1)
                                 
+                                for(let i=0;i<190;i+=1) {
+                                    setTimeout(_=> {
+                                            is[i] = new Image;
+                                            is[i].setAttribute('loading',"lazy")
+                                            is[i].classList.add('img-fluid')
+                                            is[i].id = 'rule1'
+                                            is[i].src = 'assets/img/fight/sar1'+ String(i).padStart(3, '0') + '.jpg';
+                                        
+                                    }, 1)
+                                }
                                 
                                 let c = 0;
                                 setInterval(() => {
-                                    if (c > 189) c = 0;
-                                    if (!is[c]) return;
-                                    previmg = nowimg;
+                                    if (c > 189) c = 0
+                                    if (!is[c]) return
+                                    previmg = nowimg
                                     nowimg = is[c++]
-                                    previmg.replaceWith(nowimg);
+                                    previmg.replaceWith(nowimg)
                                 }, 80)
                             }
 

@@ -8,6 +8,15 @@ html(lang='ko')
         meta(name='description', content='')
         meta(name='author', content='')
 
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://example.com/page.html">
+        <meta property="og:title" content="Dogna Cup">
+        <meta property="og:description" content="Super Animal Royale Summer League 2022">
+        <meta property="og:site_name" content="Dogna Cup">
+        <meta property="og:locale" content="ko_kr">
+
+
+
         title Dogna Cup
 
         link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
@@ -290,7 +299,7 @@ html(lang='ko')
             .container.px-4.px-lg-5           
                 .row.gx-4.gx-lg-5
                     .col-md-10.col-lg-8.mx-auto.text-center
-                        h2.text-white.mb-5 Rules
+                        h2.text-white.mb-5 Rule
                 // Project One Row
                 .row.gx-0.mb-5.mb-lg-0.justify-content-center
                     .col-lg-6
@@ -398,55 +407,15 @@ html(lang='ko')
                     .col-md-10.col-lg-8.mx-auto.text-center
                         i.far.fa-paper-plane.fa-2x.mb-2.text-white
                         h2.text-white.mb-5 Registration Coming soon
-                        //Register to Dogna Cup
-
-                        // * * * * * * * * * * * * * * *
-                        // * * SB Forms Contact Form * *
-                        // * * * * * * * * * * * * * * *
-
-                        // This form is pre-integrated with SB Forms.
-                        // To make this form functional, sign up at
-                        // https://startbootstrap.com/solution/contact-forms
-                        // to get an API token!
                         
-                        //form#contactForm.form-signup(data-sb-form-api-token='API_TOKEN')
-
-                            // Email address input
-
-                            .row.input-group-newsletter
-                                .col
-                                    input#emailAddress.form-control(
-                                        type='email',
-                                        placeholder='Enter email address...',
-                                        aria-label='Enter email address...',
-                                        data-sb-validations='required,email'
-                                    )
-                                .col-auto
-                                    button#submitButton.btn.btn-primary.disabled(type='submit') Ready!
-                            .invalid-feedback.mt-2(data-sb-feedback='emailAddress:required')
-                                | An email is required.
-                            .invalid-feedback.mt-2(data-sb-feedback='emailAddress:email')
-                                | Email is not valid.
-
-                            // Submit success message
-                            //
-                            // This is what your users will see when the form
-                            // has successfully submitted
-
-                            #submitSuccessMessage.d-none
-                                .text-center.mb-3.mt-2.text-white
-                                    .fw-bolder Form submission successful!
-                                    | To activate this form, sign up at
-                                    br
-                                    a(href='https://startbootstrap.com/solution/contact-forms') https://startbootstrap.com/solution/contact-forms
-
-                            // Submit error message
-                            //
-                            // This is what your users will see when there is
-                            // an error submitting the form
-
-                            #submitErrorMessage.d-none
-                                .text-center.text-danger.mb-3.mt-2 Error sending message!
+            //.container.px-4.px-lg-5
+                .row.gx-4.gx-lg-5.justify-content-md-center
+                    .col-md-4.mb-3.mb-md-0
+                        a.text-decoration-none(href='!#')
+                            .card.py-4.h-100
+                                .card-body.text-center
+                                    i.fab.fa-discord.text-primary.mb-2
+                                    h4.m-0 Join the Discord Server
 
         // Contact
         section#sponsors.contact-section.bg-black
@@ -455,7 +424,7 @@ html(lang='ko')
                     .col-md-10.col-lg-8.mx-auto.text-center
                         h2.text-white.mb-5 Brought to you by
             .container.px-4.px-lg-5
-                .row.gx-4.gx-lg-5
+                .row.gx-4.gx-lg-5.justify-content-md-center
                     .col-md-4.mb-3.mb-md-0
                         a.text-decoration-none(href='https://twitter.com/a_Ailre')
                             .card.py-4.h-100
@@ -466,28 +435,20 @@ html(lang='ko')
                                     .small.text-black-50 The Ambitious Developer
 
                     //.col-md-4.mb-3.mb-md-0
-                    //    .card.py-4.h-100
-                    //        .card-body.text-center
-                    //            i.fas.fa-plus.text-primary.mb-2
-                    //            h4.text-uppercase.m-0 Streamer
-                    //            hr.my-4.mx-auto
-                    //            .small.text-black-50 스트리머를 모집하고있습니다!
+                        .card.py-4.h-100
+                            .card-body.text-center
+                                i.fas.fa-plus.text-primary.mb-2
+                                h4.text-uppercase.m-0 Streamer
+                                hr.my-4.mx-auto
+                                .small.text-black-50 스트리머를 모집하고있습니다!
 
-                    //.col-md-4.mb-3.mb-md-0
-                    //    .card.py-4.h-100
-                    //        .card-body.text-center
-                    //            i.fas.fa-mobile-alt.text-primary.mb-2
-                    //            h4.text-uppercase.m-0 Phone
-                    //            hr.my-4.mx-auto
-                    //            .small.text-black-50 +1 (555) 902-8832
-
-                .social.d-flex.justify-content-center
-                    //a.mx-2(href='#!')
-                    //    i.fab.fa-discord
-                    //a.mx-2(href='#!')
-                    //    i.fab.fa-facebook-f
-                    //a.mx-2(href='https://twitter.com/a_Ailre')
-                    //    i.fab.fa-twitter
+                //.social.d-flex.justify-content-center
+                    a.mx-2(href='#!')
+                        i.fab.fa-discord
+                    a.mx-2(href='#!')
+                        i.fab.fa-facebook-f
+                    a.mx-2(href='https://twitter.com/a_Ailre')
+                        i.fab.fa-twitter
 
         // Footer
         footer.footer.bg-black.small.text-center.text-white-50

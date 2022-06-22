@@ -312,6 +312,7 @@ html(lang='ko')
                                 let nowimg = document.querySelector('#rule1');
                                 for(let i=0;i<190;i+=1) {
                                     is[i] = new Image;
+                                    is[i].setAttribute('loading',"lazy")
                                     is[i].classList.add('img-fluid')
                                     is[i].id = 'rule1'
                                     is[i].src = 'assets/img/fight/sar1'+ String(i).padStart(3, '0') + '.jpg';

@@ -47,18 +47,3 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
-
-(_ => {
-    let prevScroll = -1;
-    setInterval(_ => {
-        const html = document.querySelector('html');
-        const video = document.querySelector('video');
-        if (html.scrollTop === 0 && prevScroll !== html.scrollTop && video.paused) {
-            video.pause();
-            video.currentTime = 0;
-            video.play();
-        }
-        prevScroll = html.scrollTop;
-    
-    }, 20);
-})();

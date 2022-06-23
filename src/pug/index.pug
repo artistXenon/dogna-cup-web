@@ -89,10 +89,33 @@ html(lang='ko')
             header.masthead
                 .container.px-4.px-lg-5.d-flex.h-100.align-items-center.justify-content-center
                     .d-flex.justify-content-center
-                        .text-center
+                        #head-content.text-center
                             h1.mx-auto.my-0.text-uppercase Dogna CUP
-                            h2.text-white-50.mx-auto.mt-2.mb-5 Super Animal Royale Summer League
+                            h2.text-white-50.mx-auto.mt-2.mb-5 Super Animal Royale Summer League 2022
                             a.btn.btn-primary(href='#about') 자세히
+            script.
+                (_ => {
+                    let prevScroll = -1;
+                    const html = document.querySelector('html')
+                    const video = document.querySelector('video.mastvid')
+                    const head_content = document.querySelectorAll('#head-content > *')
+
+                    setInterval(___ => {
+                        head_content.forEach(video.currentTime < 5.3 ? 
+                            _ => _.style.opacity = 0
+                         :
+                            (_, __) => _.style.opacity = 1 - (video.duration - video.currentTime) / (video.duration - 5.3)
+                        )
+
+                        if (html.scrollTop === 0 && prevScroll !== html.scrollTop && video.paused) {
+                            video.pause()
+                            video.currentTime = 0
+                            video.play()
+                        }
+                        prevScroll = html.scrollTop                    
+                    }, 20)
+                })()
+
 
         // About
         section#about.about-section.text-center
@@ -114,8 +137,8 @@ html(lang='ko')
                             a(href='https://www.xbox.com/en-US/games/super-animal-royale') XBOX
                             | / 
                             a(href='https://www.nintendo.com/en-ca/store/products/super-animal-royale-switch/') Nintendo Switch
-                            
-                canvas#dogna.img-fluid(width='1560' height='466')
+                    .col-lg-8
+                        canvas#dogna.img-fluid(width='1560' height='466')
                 
         script(src='js/spine-canvas.js')
 
@@ -312,7 +335,7 @@ html(lang='ko')
                                 .rule-text.w-100.my-auto.text-center.text-lg-left
                                     h4.text-white Main Rule
                                     p.mb-0.text-white-50
-                                        | 3 게임씩 2세트의 솔로 경기가 치뤄집니다. 각 게임에서 순위와 킬 수를 바탕으로 각 플레이어에게 점수가 주어집니다.
+                                        | 3 게임씩 2 세트의 솔로 경기가 치뤄집니다. 각 게임에서 순위와 킬 수를 바탕으로 각 플레이어에게 점수가 주어집니다.
                                     hr.d-none.d-lg-block.mb-0.ms-0
                 // Project Two Row
                 .row.gx-0.justify-content-center
@@ -324,7 +347,7 @@ html(lang='ko')
                                 .rule-text.w-100.my-auto.text-center.text-lg-right
                                     h4.text-white Point System
                                     p.mb-0.text-white-50
-                                        | 전체 순위는 각 플레이어가 획득한 점수를 합산하여 산정됩니다.
+                                        | 전체 순위는 플레이어가 각 게임 마다 획득한 점수를 합산하여 산정됩니다.
                                     hr.d-none.d-lg-block.mb-0.me-0
                                     
         // Prize pool
@@ -376,6 +399,8 @@ html(lang='ko')
                     .col-lg-8
                         p.text-black-50.text-center
                             | 4등 ~ 64등 사이의 무작위 3명의 플레이어는 장려상으로 위 상품 중 하나씩을 받을 수 있습니다.
+                            br
+                            | 각 상품은 대한민국 거주자에 한해 발송됩니다. 해외 참가자는 상품 양도 또는 배송대행지로 발송을 안내해드립니다.
 
 
         // Signup
@@ -384,7 +409,7 @@ html(lang='ko')
                 .row.gx-4.gx-lg-5
                     .col-md-10.col-lg-8.mx-auto.text-center
                         i.far.fa-paper-plane.fa-2x.mb-2.text-white
-                        h2.text-white.mb-5 Registration Coming soon
+                        h2.text-white.mb-5 Registration coming soon
                         
             //.container.px-4.px-lg-5
                 .row.gx-4.gx-lg-5.justify-content-md-center

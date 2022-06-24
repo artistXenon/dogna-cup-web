@@ -10,7 +10,7 @@
         "build:scss": "node scripts/build-scss.js",
         "clean": "node scripts/clean.js",
         "start": "npm run build && node scripts/express.js",
-        "start:dry": "npm run build && node scripts/express.js",
+        "start:dry": "node scripts/express.js",
         "start:debug": "npm run build && node scripts/start-debug.js"
     },
     "description": "A grayscale one page HTML theme for Bootstrap.",

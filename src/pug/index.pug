@@ -102,7 +102,10 @@ html(lang='ko')
 
                     setInterval(___ => {
                         head_content.forEach(video.currentTime < 5.3 ? 
-                            _ => _.style.opacity = 0
+                            _ => {
+                                if (video.paused) return
+                                _.style.opacity = 0
+                            }
                          :
                             (_, __) => _.style.opacity = 1 - (video.duration - video.currentTime) / (video.duration - 5.3)
                         )

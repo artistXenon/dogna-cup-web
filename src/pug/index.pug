@@ -92,16 +92,18 @@ html(lang='ko')
                     .d-flex.justify-content-center
                         #head-content.text-center
                             h1.mx-auto.my-0.text-uppercase Dogna CUP
-                            h2.text-white-50.mx-auto.mt-2.mb-5 Super Animal Royale Summer League 2022
+                            h2#trigger_stream.text-white-50.mx-auto.mt-2.mb-5 Super Animal Royale Summer League 2022
                             a.btn.btn-primary(href='#about') 자세히
             script.
-                (_ => {
-                    let prevScroll = -1;
-                    const html = document.querySelector('html')
+                ;(____ => {
+                    let defaultInterval
                     const video = document.querySelector('video.mastvid')
                     const head_content = document.querySelectorAll('#head-content > *')
 
-                    setInterval(___ => {
+                    let prevScroll = -1
+                    const html = document.querySelector('html')
+
+                    defaultInterval = setInterval(___ => {
                         head_content.forEach(video.currentTime < 5.3 ? 
                             _ => {
                                 if (video.paused) return
@@ -111,13 +113,28 @@ html(lang='ko')
                             (_, __) => _.style.opacity = 1 - (video.duration - video.currentTime) / (video.duration - 5.3)
                         )
 
-                        if (html.scrollTop === 0 && prevScroll !== html.scrollTop && video.paused) {
+                        if (html.scrollTop === 0 && prevScroll !== html.scrollTop && video && video.paused) {
                             video.pause()
                             video.currentTime = 0
                             video.play()
                         }
                         prevScroll = html.scrollTop                    
                     }, 20)
+
+
+                    const trigger = document.querySelector('h2#trigger_stream')
+                    const source = document.querySelector('video.mastvid source')
+                    const tr_cb = _ => {
+                        video.loop = true 
+                        video.style.filter = 'brightness(30%)'
+                        source.setAttribute('src', 'https://github.com/artistXenon/dogna-cup-web/blob/main/src/assets/vid/sar1.mp4?raw=true')
+                        video.load()
+                        video.play()
+                        clearInterval(defaultInterval)
+                        head_content.forEach(n => n.style.opacity = 1)                    
+                        trigger.removeEventListener('click', tr_cb)
+                    }
+                    trigger.addEventListener('click', tr_cb)
                 })()
 
 

@@ -95,7 +95,7 @@ html(lang='ko')
                             h2#trigger_stream.text-white-50.mx-auto.mt-2.mb-5 Super Animal Royale Summer League 2022
                             a.btn.btn-primary(href='#about') 자세히
             script.
-                ;(____ => {
+                ;(_ => {
                     let defaultInterval
                     const video = document.querySelector('video.mastvid')
                     const head_content = document.querySelectorAll('#head-content > *')
@@ -103,14 +103,16 @@ html(lang='ko')
                     let prevScroll = -1
                     const html = document.querySelector('html')
 
-                    defaultInterval = setInterval(___ => {
+                    defaultInterval = setInterval(_ => {
                         head_content.forEach(video.currentTime < 5.3 ? 
-                            _ => {
+                            (node, index) => {
                                 if (video.paused) return
-                                _.style.opacity = 0
+                                node.style.opacity = 0
                             }
                          :
-                            (_, __) => _.style.opacity = 1 - (video.duration - video.currentTime) / (video.duration - 5.3)
+                            (node, index) => {
+                                node.style.opacity = 1 - (video.duration - video.currentTime) / (video.duration - 5.3)
+                            }
                         )
 
                         if (html.scrollTop === 0 && prevScroll !== html.scrollTop && video && video.paused) {
@@ -134,7 +136,7 @@ html(lang='ko')
                         head_content.forEach(n => n.style.opacity = 1)                    
                         trigger.removeEventListener('click', tr_cb)
                     }
-                    trigger.addEventListener('click', tr_cb)
+                    //trigger.addEventListener('click', tr_cb)
                 })()
 
 

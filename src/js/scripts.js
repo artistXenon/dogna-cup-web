@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
+    window.location.href = "http://180.69.234.155:9304";
 
-    window.open("http://180.69.234.155:9304", "_blank");
 
 });

